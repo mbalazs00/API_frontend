@@ -1,0 +1,28 @@
+
+body {
+    background-color: #e6f2ff;
+}
+
+thead th {
+    background-color: #cce7ff;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+button, input[type="submit"] {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+}

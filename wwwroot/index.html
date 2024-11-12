@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do Application</title>
+    <!-- Bootstrap 4 CSS CDN -->
+    <!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-lg p-4 rounded" style="width: 100%; max-width: 600px; border-color: #cce7ff;">
+            <h1 class="text-center text-primary">To-Do Application</h1>
+            
+            <h3 class="text-secondary">Add New</h3>
+            <form class="form-inline mb-4" action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                <input type="text" id="add-name" class="form-control mr-2 mb-2" placeholder="New to-do" required>
+                <button type="submit" class="btn btn-primary mb-2">Add</button>
+            </form>
+
+            <div id="editForm" class="mb-4" style="display: none;">
+                <h3 class="text-secondary">Edit</h3>
+                <form action="javascript:void(0);" onsubmit="updateItem()">
+                    <input type="hidden" id="edit-id">
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="edit-isComplete">
+                        <label class="form-check-label" for="edit-isComplete">Is Complete</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="edit-name" class="form-control" placeholder="Edit to-do" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeInput()">Cancel</button>
+                </form>
+            </div>
+
+            <p id="counter" class="text-muted"></p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" style="width: 20%;">Is Complete?</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" style="width: 15%;"></th>
+                            <th scope="col" style="width: 15%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="todos"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>
